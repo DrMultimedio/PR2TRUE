@@ -1,0 +1,15 @@
+5
+E F P I V
+car * coche * le cochette * cochinho * cochicci * cocha
+key * llave * le llavette * lavinha * * llava
+button * boton * le botonette * botoninho * boticci * botona
+computer * ordenador * * * ordenadoricci * ordenadora
+chair * silla * le sillette * sillinha * sillicci * sillaa
+dog * perro * le perrette * * * 
+gun * pistola * le pistolette * * pistolicci * pistolaa
+escape * * le escapette * * *
+amalgamated * amalgamado * le amalgamadette * amalgamadinho * amalgamadicci * amalgamada
+revenant * retornado * le retornadette * retornadinho * *
+cat * * le gatette * gatinho * gaticci *
+luck * suerte * le suertette * * *
+portal * portal * le portalette * * * portala
