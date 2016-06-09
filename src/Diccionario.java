@@ -11,4 +11,7 @@ public interface Diccionario {
 	public void visualiza(int j, char l);
 	
 }
+<<<<<<< HEAD
 //prueba commit
+=======
+>>>>>>> parent of 0108eb7... Revert "Commit inicial"
