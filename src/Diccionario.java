@@ -11,3 +11,4 @@ public interface Diccionario {
 	public void visualiza(int j, char l);
 	
 }
+//prueba commit
