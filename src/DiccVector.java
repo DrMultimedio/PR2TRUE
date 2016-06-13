@@ -78,10 +78,11 @@ public class DiccVector implements Diccionario{
 			
 			//recorro el array que he creado separando la linea, menos uno, dado que 
 			//origen ya la he almacenado
-			for(int j=0; j<s.length-1;j++){
+			for(int j=0; j<s.length-1 && j<p.getLenguas().length;j++){
 				if (s[j]!=null)
 				{
 					//j+1 porque s[0] es la palabra origen
+					System.out.println(p.getLenguas().length + " " + j);
 					p.setTrad(s[j+1], p.getLenguas()[j]);	
 
 				}
@@ -165,28 +166,29 @@ public class DiccVector implements Diccionario{
 	public int busca(String s) {
 		//este m�todo busca la cadena s en el diccionario y devuelve las comparaciones que tuvo que hacer (pero �ptimamente)
 		//para este caso implementar� una b�squeda binaria, consistente en dividir el array en dos para averiguar en que zona est� del array
-		
-		int centro, max=dicc.size()-1, min=0, i=0;
-		//centro ser� el centro de donde estoy buscando
-		//max es el rango m�ximo que estoy buscando
-		//min es el rango m�nimo 
-		//i es el n�mero de iteracciones que realiza el programa
-		while (min<=max){
-			i++;
-			centro=(max+min)/2;			
-			if (dicc.get(centro).getOrigen().compareToIgnoreCase(s)==0){ //si me devuelve 0, las palabras son las mismas, y no tengo que buscar m�s
-				return i;
-			}
-			else{
-				if(dicc.get(centro).getOrigen().compareToIgnoreCase(s)>0){//se devuelve un n�mero mayor que uno, el objeto del diccionario es mayor que el que me pasan
-					max=centro-1; //y por tanto, no estar� m�s arriba que en el centro.
+			int i =0 ;
+		if(s!=null){
+			int centro, max=dicc.size()-1, min=0;
+			//centro ser� el centro de donde estoy buscando
+			//max es el rango m�ximo que estoy buscando
+			//min es el rango m�nimo 
+			//i es el n�mero de iteracciones que realiza el programa
+			while (min<=max){
+				i++;
+				centro=(max+min)/2;			
+				if (dicc.get(centro).getOrigen().compareToIgnoreCase(s)==0){ //si me devuelve 0, las palabras son las mismas, y no tengo que buscar m�s
+					return i;
 				}
-				else{ //si devuelve un n�mero menor que uno, la palabra buscada no estar� m�s abajo del centro
-					min=centro+1; // y por tanto el m�nimo pasar� a ser el centro
+				else{
+					if(dicc.get(centro).getOrigen().compareToIgnoreCase(s)>0){//se devuelve un n�mero mayor que uno, el objeto del diccionario es mayor que el que me pasan
+						max=centro-1; //y por tanto, no estar� m�s arriba que en el centro.
+					}
+					else{ //si devuelve un n�mero menor que uno, la palabra buscada no estar� m�s abajo del centro
+						min=centro+1; // y por tanto el m�nimo pasar� a ser el centro
+					}
 				}
 			}
 		}
-		
 		return -i;
 
 	}
@@ -196,27 +198,27 @@ public class DiccVector implements Diccionario{
 		//en lugar de devolver el numero de iteraciones
 		//este m�todo busca la cadena s en el diccionario y devuelve las comparaciones que tuvo que hacer (pero �ptimamente)
 		//para este caso implementar� una b�squeda binaria, consistente en dividir el array en dos para averiguar en que zona est� del array
-		
-		int centro, max=dicc.size()-1, min=0;
-		//centro ser� el centro de donde estoy buscando
-		//max es el rango m�ximo que estoy buscando
-		//min es el rango m�nimo 
-		//i es el n�mero de iteracciones que realiza el programa
-		while (min<=max){
-			centro=(max+min)/2;			
-			if (dicc.get(centro).getOrigen().compareToIgnoreCase(s)==0){ //si me devuelve 0, las palabras son las mismas, y no tengo que buscar m�s
-				return centro;
-			}
-			else{
-				if(dicc.get(centro).getOrigen().compareToIgnoreCase(s)>0){//se devuelve un n�mero mayor que uno, el objeto del diccionario es mayor que el que me pasan
-					max=centro-1; //y por tanto, no estar� m�s arriba que en el centro.
+		if(s != null){
+			int centro, max=dicc.size()-1, min=0;
+			//centro ser� el centro de donde estoy buscando
+			//max es el rango m�ximo que estoy buscando
+			//min es el rango m�nimo 
+			//i es el n�mero de iteracciones que realiza el programa
+			while (min<=max){
+				centro=(max+min)/2;			
+				if (dicc.get(centro).getOrigen().compareToIgnoreCase(s)==0){ //si me devuelve 0, las palabras son las mismas, y no tengo que buscar m�s
+					return centro;
 				}
-				else{ //si devuelve un n�mero menor que uno, la palabra buscada no estar� m�s abajo del centro
-					min=centro+1; // y por tanto el m�nimo pasar� a ser el centro
+				else{
+					if(dicc.get(centro).getOrigen().compareToIgnoreCase(s)>0){//se devuelve un n�mero mayor que uno, el objeto del diccionario es mayor que el que me pasan
+						max=centro-1; //y por tanto, no estar� m�s arriba que en el centro.
+					}
+					else{ //si devuelve un n�mero menor que uno, la palabra buscada no estar� m�s abajo del centro
+						min=centro+1; // y por tanto el m�nimo pasar� a ser el centro
+					}
 				}
 			}
 		}
-		
 		return -1;
 
 	}

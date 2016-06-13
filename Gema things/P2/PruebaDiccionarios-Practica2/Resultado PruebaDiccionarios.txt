@@ -1,0 +1,61 @@
+﻿address:adresse:dirección:endereço
+badly:mal:malo:gravemente
+family:famille:familia:família
+lay:poser:poner:colocar
+normal:normal:normal:normal
+photograph:photographie:fotografía:fotografar
+please:s'il vous plaît:por favor:por favor
+toy:jouet:juguete:brinquedo
+vowel:voyelle:vocal:vogala
+wrong:faux:equivocado:errado
+---------------------------------------------------------------------
+Posicion de family: 2
+Posicion de family: -3
+---------------------------------------------------------------------
+address:adresse:dirección:endereço
+badly:mal:malo:gravemente
+lay:poser:poner:colocar
+normal:normal:normal:normal
+photograph:photographie:fotografía:fotografar
+please:s'il vous plaît:por favor:por favor
+toy:jouet:juguete:brinquedo
+vowel:voyelle:vocal:vogala
+wrong:faux:equivocado:errado
+---------------------------------------------------------------------
+Traduccion de wrong a espanyol: equivocado
+---------------------------------------------------------------------
+address:adresse:dirección:endereço
+badly:mal:malo:gravemente
+lay:poser:poner:colocar
+normal:normal:normal:normal
+photograph:photographie:fotografía:fotografar
+please:s'il vous plaît:por favor:por favor
+toy:jouet:juguete:brinquedo
+vowel:voyelle:vocal:vogala
+wrong:faux:equivocado:errado
+---------------------------------------------------------------------
+address:adresse:dirección:endereço
+badly:mal:malo:gravemente
+lay:poser:poner:colocar
+normal:normal:normal:normal
+photograph:photographie:fotografía:fotografar
+---------------------------------------------------------------------
+address:adresse:dirección:endereço
+---------------------------------------------------------------------
+address:dirección
+badly:malo
+lay:poner
+normal:normal
+photograph:fotografía
+please:por favor
+toy:juguete
+vowel:vocal
+wrong:equivocado
+---------------------------------------------------------------------
+address:dirección
+badly:malo
+lay:poner
+normal:normal
+photograph:fotografía
+---------------------------------------------------------------------
+address:dirección

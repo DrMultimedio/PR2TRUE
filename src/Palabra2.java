@@ -59,7 +59,9 @@ public class Palabra2 {
 	//constructor solo con char
 	public Palabra2(char[] l){
 		
+		//pongo lenguas al valor que nos pasan
 		lenguas=l;
+		//pongo origen a vacío
 		origen="";
 		
 		//inicializo el vector trad
@@ -147,28 +149,14 @@ public class Palabra2 {
 		else
 		return -1;
 	}
-	
-	public static void main(String [] args)
-	{
-	Palabra2 palabra= new Palabra2("hello");
-	Palabra2 p2= new Palabra2("hello");
-
-	//palabra.setTrad("hola", 'E');
-	palabra.setTrad("omelette du fromage", 'F');
-	palabra.setTrad("abrigado", 'P');
-	palabra.setTrad("samba", 'P');
-	p2.setTrad("saludos", 'E');
-	palabra.combinaPalabra(p2);
-	palabra.escribeInfo();
-
-	}
 
 	public char[] getLenguas() {
 		return lenguas;
 	}
 
 	public void escribeInfoTrad(char l) {
-
+		
+		//devuelvo una cadena con origen:trad1:trad2:trad3
 		System.out.print(origen);
 		System.out.print(":" + this.getTraduccion(l));
 		System.out.println();

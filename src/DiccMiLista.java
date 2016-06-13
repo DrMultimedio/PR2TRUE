@@ -108,7 +108,7 @@ public class DiccMiLista implements Diccionario{
 
 			//recorro el array que he creado separando la linea, menos uno, dado que 
 			//origen ya la he almacenado
-			for(int j=0; j<s.length-1;j++){
+			for(int j=0; j<s.length-1 && j<p.getLenguas().length;j++){
 				if (s[j]!=null)
 				{
 					//j+1 porque s[0] es la palabra origen

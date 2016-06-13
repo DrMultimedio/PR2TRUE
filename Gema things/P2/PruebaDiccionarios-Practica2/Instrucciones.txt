@@ -1,0 +1,9 @@
+PruebaDiccionario
+----------------
+Diccionario a pasar->DiccDiccionario.dic
+Resultado->Resultado PruebaDiccionarios.txt
+
+Pruebalisbili
+-------------
+Diccionario a pasar->dicclb.dic
+Resultado->Pruebalisbili-Alice.txt

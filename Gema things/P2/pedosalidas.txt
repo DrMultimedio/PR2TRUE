@@ -1,0 +1,8 @@
+PARA O
+SALIDA
+adressde:0,1,2,3,4
+
+
+PARA D
+SALIDA
+FINAL:0,1,2,3,4
