@@ -174,7 +174,19 @@ public class DiccVector implements Diccionario{
 			//i es el nomero de iteracciones que realiza el programa
 			while (min<=max){
 				i++;
-				centro=(max+min)/2;
+				centro = (max + min)/2;
+				if(dicc.get(centro).getOrigen().compareToIgnoreCase(s)==0){
+					return i;
+				}
+				else if(dicc.get(centro).getOrigen().compareToIgnoreCase(s)>0){
+					max=centro-1;
+				}
+				else{
+					min = centro +1;
+				}
+				
+
+				/*centro=(max+min)/2;
 				if (dicc.get(centro).getOrigen().compareToIgnoreCase(s)==0){ //si me devuelve 0, las palabras son las mismas, y no tengo que buscar mos
 					return i;
 				}
@@ -186,6 +198,7 @@ public class DiccVector implements Diccionario{
 						min=centro+1; // y por tanto el monimo pasaro a ser el centro
 					}
 				}
+				*/
 			}
 		}
 		return -i;
