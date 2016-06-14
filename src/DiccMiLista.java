@@ -137,7 +137,7 @@ public class DiccMiLista implements Diccionario{
 		}
 		else{
 			while (recorre!=null&&rep==false){ //mientras que haya algo en recorre, y rep no sea true
-				if(recorre.getPalabra2().getOrigen().equals(nuevo.getPalabra2().getOrigen())){
+				if(recorre.getPalabra2().getOrigen().equalsIgnoreCase(nuevo.getPalabra2().getOrigen())){
 					rep=true;
 				}
 				recorre=recorre.getNext();
@@ -188,7 +188,7 @@ public class DiccMiLista implements Diccionario{
 		NodoL naux = null;
 		NodoL recorre = first;
 		while (recorre!=null&&found==false){ //mientras que haya algo en recorre, y found no sea true
-			if(recorre.getPalabra2().getOrigen().equals(s)){
+			if(recorre.getPalabra2().getOrigen().equalsIgnoreCase(s)){
 				if (recorre == first){
 					first = first.getNext();
 					found = true;
@@ -210,7 +210,7 @@ public class DiccMiLista implements Diccionario{
 		int i = 0; 
 		NodoL recorre = first;
 		while (recorre!=null){ //mientras que haya algo en recorre, y found no sea true
-			if(recorre.getPalabra2().getOrigen().equals(s)){
+			if(recorre.getPalabra2().getOrigen().equalsIgnoreCase(s)){
 				return i;
 			}
 			recorre = recorre.getNext();
@@ -225,7 +225,7 @@ public class DiccMiLista implements Diccionario{
 	public String traduce(String s, char l) {
 		NodoL recorre = first;
 		while (recorre!=null){ //mientras que haya algo en recorre
-			if(recorre.getPalabra2().getOrigen().equals(s)){
+			if(recorre.getPalabra2().getOrigen().equalsIgnoreCase(s)){
 				return recorre.getPalabra2().getTraduccion(l); //si encuentro la palabra la traduzco
 			}
 			recorre = recorre.getNext();

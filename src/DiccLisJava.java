@@ -112,7 +112,7 @@ public class DiccLisJava implements Diccionario{
 		//compruebo si tengo la palabra en el diccionario
 		for (int i=0; i<dicc.size();i++)
 		{
-			if (p.getOrigen().equals(dicc.get(i).getOrigen()))
+			if (p.getOrigen().equalsIgnoreCase(dicc.get(i).getOrigen()))
 			{
 				rep=true;
 				actual= i;
@@ -159,7 +159,7 @@ public class DiccLisJava implements Diccionario{
 
 		for (int i=0; i<dicc.size();i++)
 		{
-			if (dicc.get(i).getOrigen().equals(s))
+			if (dicc.get(i).getOrigen().equalsIgnoreCase(s))
 			{
 				dicc.remove(i);
 				return true;
@@ -170,11 +170,14 @@ public class DiccLisJava implements Diccionario{
 
 	public int busca(String s) {
 		//este metodo busca la cadena s en el diccionario y devuelve las comparaciones que tuvo que hacer (pero �ptimamente)
-		//para este caso implementar� una b�squeda binaria, consistente en dividir el array en dos para averiguar en que zona est� del array
+		//para este caso implementare una busqueda secuencial, debido a las caracteristicas de las listas
 		int i=0;
-		for(;i<dicc.size();i++){
-			if (dicc.get(i).getOrigen().equals(s)){
-				return i;
+		if(s != null) {
+			for(;i<dicc.size();i++){
+				if (dicc.get(i).getOrigen().equalsIgnoreCase(s)){
+					return i;
+
+				}
 			}
 		}
 		return -i;
@@ -186,17 +189,17 @@ public class DiccLisJava implements Diccionario{
 		//en lugar de devolver el numero de iteraciones
 		int i=0;
 		for(;i<dicc.size();i++){
-			if (dicc.get(i).getOrigen().equals(s)){
+			if (dicc.get(i).getOrigen().equalsIgnoreCase(s)){
 				return i;
 			}
 		}
-		return -i;
+		return -1;
 	}
 	
 	public String traduce(String s, char l) {
 		
 		int pos= buscaMetodos(s);
-		if (pos > 0)
+		if (pos >= 0)
 		{
 			return dicc.get(pos).getTraduccion(l);
 			
