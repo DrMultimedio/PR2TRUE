@@ -150,8 +150,12 @@ public class DiccMiLista implements Diccionario{
 			if(rep==false){
 				//si  rep es falso volvemos a recorrer la lista, para ordenarla
 				recorre = first; // ponemos recorre a first
+					
+				if(p.getOrigen().equalsIgnoreCase("Butterfly Kiss Blade74"))
+					System.out.println("here we go ma boi");
+				
 				while (recorre!=null&&found==false){  //mientras que haya algo en recorre, y rep no sea true
-
+					
 					if(recorre.getPalabra2().getOrigen().compareToIgnoreCase(nuevo.getPalabra2().getOrigen())>0){
 						//si la palabra de recorre es menor que la de nuevo, meto antes de reccorre el nuevo
 
