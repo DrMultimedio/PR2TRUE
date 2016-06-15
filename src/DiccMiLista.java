@@ -125,7 +125,7 @@ public class DiccMiLista implements Diccionario{
 
 	public boolean inserta(Palabra2 p) {
 		NodoL nuevo = new NodoL(), naux = null , recorre = null; //defino un nuevo nodo, nodol
-		boolean rep=false, ret= true, found=false; //defino dos boolean, uno por si encuentro que p esta repetida
+		boolean rep=false, ret= false, found=false; //defino dos boolean, uno por si encuentro que p esta repetida
 		//y otro que es la variable que devolvere
 		nuevo.setPalabra2(p); //hago un nuevo nodo con la palabra nueva
 
@@ -134,26 +134,34 @@ public class DiccMiLista implements Diccionario{
 			//si es la primera vez, first sera null, y por tanto, pondre recorre a first
 			//y first sera el nuevo
 			first=nuevo;
+			ret = true;
 		}
 		else{
+			recorre = first; // ponemos recorre a first
 			while (recorre!=null&&rep==false){ //mientras que haya algo en recorre, y rep no sea true
 				if(recorre.getPalabra2().getOrigen().equalsIgnoreCase(nuevo.getPalabra2().getOrigen())){
 					rep=true;
 				}
+				if(rep != true){
 				recorre=recorre.getNext();
+				}
 			}
+				
 			if(rep==false){
 				//si  rep es falso volvemos a recorrer la lista, para ordenarla
 				recorre = first; // ponemos recorre a first
-				while (recorre!=null&&found==false){
+				while (recorre!=null&&found==false){  //mientras que haya algo en recorre, y rep no sea true
 
-					if(recorre.getPalabra2().getOrigen().compareTo(nuevo.getPalabra2().getOrigen())>0){
+					if(recorre.getPalabra2().getOrigen().compareToIgnoreCase(nuevo.getPalabra2().getOrigen())>0){
 						//si la palabra de recorre es menor que la de nuevo, meto antes de reccorre el nuevo
 
-						if (recorre==first){
+						if (recorre.getPalabra2().getOrigen().equalsIgnoreCase(first.getPalabra2().getOrigen())){
 							//si recorre es el primero
 							nuevo.cambiaNext(first); //recorre apunta a first
 							first=nuevo; //y first pasa a ser el nuevo
+							ret = true;
+							System.out.println("insertado " + p.getOrigen());
+
 						}
 
 						else{//si no es el primero
@@ -162,7 +170,7 @@ public class DiccMiLista implements Diccionario{
 							recorre = nuevo;
 						}
 						found=true;
-
+						ret = true;
 					}
 					naux= recorre;
 					recorre= recorre.getNext();
@@ -177,7 +185,6 @@ public class DiccMiLista implements Diccionario{
 				Palabra2 aux = recorre.getPalabra2();
 				int check = aux.combinaPalabra(p);
 				if (check>0);
-
 			}
 		}
 		return ret;

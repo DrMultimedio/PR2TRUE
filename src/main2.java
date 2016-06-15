@@ -86,7 +86,6 @@ public class main2 {
 		      /////LECTURA DE DICCLIS
 			    Diccionario diccio3=new DiccLisJava();
 			      diccio3.leeDiccionario("pruebameplease.txt");
-			     
 			      System.out.println(" BIENVENID@ A LA PRUEBA DE DICCLIS ");
 			      
 			      diccio3.visualiza();
