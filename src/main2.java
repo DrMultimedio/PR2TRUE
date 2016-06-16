@@ -81,6 +81,9 @@ public class main2 {
 		      System.out.println();
 		      System.out.println();
 		      System.out.println();
+		      
+		      
+		      
 		      System.out.println("AHORA DICCLIS");
 		      
 		      /////LECTURA DE DICCLIS
