@@ -169,9 +169,8 @@ public class DiccMiLista implements Diccionario{
 						}
 
 						else{//si no es el primero
-							nuevo.cambiaNext(recorre.getNext());
+							nuevo.cambiaNext(recorre);
 							naux.cambiaNext(nuevo);
-							recorre = nuevo;
 						}
 						found=true;
 						ret = true;
