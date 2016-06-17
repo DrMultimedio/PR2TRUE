@@ -112,7 +112,7 @@ public class ListaBilingue {
 
 	public boolean inserta(String o, String d){
 		//Aqui vamos a insertar las palabras
-		boolean ret = false, repetida = false, primeroO = true, primeroB = true;
+		boolean ret = false, repetida = false, primeroO = false, primeroB = false;
 		NodoB nuevo, recorre, aux, sitioOrigen = null, sitioBilingue = null;
 
 		//compruebo que ninguna de las dos palabras sea nula
@@ -276,13 +276,13 @@ public class ListaBilingue {
 			if(recorre.getBilingue().equalsIgnoreCase(s)){
 				if(recorre  == last){
 					last = recorre.getPrev();
-					borraO2(s);
+					borraO2(recorre.getOrigen());
 					ret = true;
 
 				}
 				else{
 					aux.cambiaPrev(recorre.getPrev());
-					borraO2(s);
+					borraO2(recorre.getOrigen());
 					ret = true;
 
 				}
@@ -303,6 +303,7 @@ public class ListaBilingue {
 
 					first = recorre.getNext();
 					ret = true;
+					
 				}
 				else{
 					aux.cambiaNext(recorre.getNext());
