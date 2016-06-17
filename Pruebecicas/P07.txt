@@ -1,0 +1,44 @@
+-------DICCIONARIO------
+----------E F P---------
+amalgamated:amalgamado:le amalgamatette:amalgamadinho
+boat:barco:le barquette:
+car:coche::cochinho
+digital:digital:le digitalette:digitalinho
+euphoria:euforia::
+french:frances:le fracesette:
+goal::le golette:
+hello:hola:le holette:holinho
+island:isla:le islette:islinha
+jacket:::chaquetinha
+-------PALABRAS------
+account:cuenta::cuentinha
+abacus:abaco:le abaquette:
+more:mas:le masette:masinho
+frankly:francamente::francamentinho
+congratulations:enhorabuena:le enhorabuenette:enhorabueninha
+totally:totalmente::totalmentinho
+-------INSERTAR------
+Insertar account en la cabeza de la lista: true
+Insertar abacus en la cabeza de la lista: true
+Insertar more en la cola de la lista: true
+Insertar frankly por en medio de la lista: true
+Insertar congratulations por en medio de la lista: true
+Insertar totally en la cola de la lista: true
+-------DICCIONARIO------
+----------E F P---------
+abacus:abaco:le abaquette:
+account:cuenta::cuentinha
+amalgamated:amalgamado:le amalgamatette:amalgamadinho
+boat:barco:le barquette:
+car:coche::cochinho
+congratulations:enhorabuena:le enhorabuenette:enhorabueninha
+digital:digital:le digitalette:digitalinho
+euphoria:euforia::
+frankly:francamente::francamentinho
+french:frances:le fracesette:
+goal::le golette:
+hello:hola:le holette:holinho
+island:isla:le islette:islinha
+jacket:::chaquetinha
+more:mas:le masette:masinho
+totally:totalmente::totalmentinho

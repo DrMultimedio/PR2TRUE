@@ -1,0 +1,11 @@
+ bugg:bugaso
+Backpack:Mochila
+bug:bicho
+Dark Souls:Almas oscuritas
+duck:pato
+house:casa
+League of Legends:Liga de las leyendas
+null:nada
+Shoe:Zapato
+tail:cola
+zed:roto

@@ -1,0 +1,36 @@
+address:adresse:dirección:endereço
+badly:mal:malo:gravemente
+family:famille:familia:família
+lay:poser::colocar
+normal::normal:normal
+photograph:photographie:fotografía:fotografar
+please:s'il vous plaît:por favor:
+toy:jouet:juegaso:jueguete
+vowel::cosas:
+wrong:d:e:k
+true
+true
+true
+false
+false
+
+Ahora con los borradicos
+badly:mal:malo:gravemente
+family:famille:familia:família
+lay:poser::colocar
+normal::normal:normal
+photograph:photographie:fotografía:fotografar
+toy:jouet:juegaso:jueguete
+vowel::cosas:
+badly:
+family:
+lay:
+normal:
+photograph:
+toy:
+vowel:
+
+Vamos a borrar ahora todos desde la cabeza
+
+No deberia quedar nada aqui ^^
+¿Todo correcto? :)

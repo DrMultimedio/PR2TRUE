@@ -157,10 +157,12 @@ public class Palabra2 {
 	public void escribeInfoTrad(char l) {
 		
 		//devuelvo una cadena con origen:trad1:trad2:trad3
-		System.out.print(origen);
-		System.out.print(":" + this.getTraduccion(l));
+		System.out.print(origen + ":");
+		if(this.getTraduccion(l)!=null){
+			System.out.print(this.getTraduccion(l));
+		}
 		System.out.println();
-		
+
 	}
 	
 }

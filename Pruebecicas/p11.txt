@@ -1,0 +1,27 @@
+-------DICCIONARIO------
+--------E F P I V-------
+amalgamated:amalgamado:le amalgamadette:amalgamadinho:amalgamadicci:amalgamada
+button:boton:le botonette:botoninho:boticci:botona
+car:coche:le cochette:cochinho:cochicci:cocha
+cat::le gatette:gatinho:gaticci:
+chair:silla:le sillette:sillinha:sillicci:sillaa
+computer:ordenador:::ordenadoricci:ordenadora
+dog:perro:le perrette:::
+escape::le escapette:::
+gun:pistola:le pistolette::pistolicci:pistolaa
+key:llave:le llavette:lavinha::llava
+luck:suerte:le suertette:::
+portal:portal:le portalette:::portala
+revenant:retornado:le retornadette:retornadinho::
+-------BUSQUEDA------
+PALABRAS QUE SI ESTAN
+Buscar en el diccionario amalgamated(primera): 1
+Buscar en el diccionario gun(por en medio): 9
+Buscar en el diccionario chair(por en medio): 5
+Buscar en el diccionario button(por en medio): 2
+Buscar en el diccionario revenant(ultima): 13
+PALABRAS QUE NO ESTAN
+Buscar en el diccionario euphoria: -13
+Buscar en el diccionario feminism: -13
+Buscar en el diccionario kill: -13
+Buscar en el diccionario justice: -13

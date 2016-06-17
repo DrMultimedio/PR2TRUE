@@ -128,7 +128,11 @@ public class DiccMiLista implements Diccionario{
 		boolean rep=false, ret= false, found=false; //defino dos boolean, uno por si encuentro que p esta repetida
 		//y otro que es la variable que devolvere
 		nuevo.setPalabra2(p); //hago un nuevo nodo con la palabra nueva
-
+		for(int i = 0; i < lenguas.size(); i++){
+			if(lenguas.get(i)!=p.getLenguas()[i]){
+				return false;
+			}
+		}
 		if (first == null)
 		{
 			//si es la primera vez, first sera null, y por tanto, pondre recorre a first
@@ -151,8 +155,6 @@ public class DiccMiLista implements Diccionario{
 				//si  rep es falso volvemos a recorrer la lista, para ordenarla
 				recorre = first; // ponemos recorre a first
 					
-				if(p.getOrigen().equalsIgnoreCase("Butterfly Kiss Blade74"))
-					System.out.println("here we go ma boi");
 				
 				while (recorre!=null&&found==false){  //mientras que haya algo en recorre, y rep no sea true
 					
@@ -164,7 +166,6 @@ public class DiccMiLista implements Diccionario{
 							nuevo.cambiaNext(first); //recorre apunta a first
 							first=nuevo; //y first pasa a ser el nuevo
 							ret = true;
-							System.out.println("insertado " + p.getOrigen());
 
 						}
 
@@ -180,6 +181,7 @@ public class DiccMiLista implements Diccionario{
 				}
 				if (found == false){
 					naux.cambiaNext(nuevo);
+					ret = true;
 				}
 
 
@@ -218,15 +220,16 @@ public class DiccMiLista implements Diccionario{
 	public int busca(String s) {
 
 		int i = 0; 
-		NodoL recorre = first;
-		while (recorre!=null){ //mientras que haya algo en recorre, y found no sea true
-			if(recorre.getPalabra2().getOrigen().equalsIgnoreCase(s)){
-				return i;
+		if(s != null){
+			NodoL recorre = first;
+			while (recorre!=null){ //mientras que haya algo en recorre, y found no sea true
+				i++;
+				if(recorre.getPalabra2().getOrigen().equalsIgnoreCase(s)){
+					return i;
+				}
+				recorre = recorre.getNext();
 			}
-			recorre = recorre.getNext();
-			i++;
 		}
-
 
 		return -i;
 	}

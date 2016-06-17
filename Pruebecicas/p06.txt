@@ -1,0 +1,19 @@
+-------DICCIONARIO-------
+---------E F P I---------
+amalgamated:amalgamado:::
+car:coche:le cochette:cochinho:
+cat::le gatette:gatinho:
+demon:demonio::demoninho:demonicci
+dog:perro:::perricci
+friend:amigo::amiguinho:amiguicci
+house:casa:le casette:casinha:casicci
+-------TRADUCIR PALABRAS-------
+PALABRAS CON TRADUCCION
+Traducir cat a F: le gatette
+Traducir perro a E: perro
+Traducir demon a I: demonicci
+PALABRAS SIN TRADUCCION
+Traducir friend a F: null
+Traducir cat a E: null
+Traducir car a I: null
+Traducir amalgamated a P: null

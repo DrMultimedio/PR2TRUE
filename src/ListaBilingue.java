@@ -210,7 +210,7 @@ public class ListaBilingue {
 					}
 					//AHORA EN BILINGUE
 					//si es el primero
-					if(sitioBilingue.getBilingue().equalsIgnoreCase(last.getBilingue())){
+					if(primeroB == true){
 						//si es el primero pongo first a nuevo, y le pongo a nuevo siguiente el anterior first
 						nuevo.cambiaPrev(sitioBilingue);
 						last = nuevo;

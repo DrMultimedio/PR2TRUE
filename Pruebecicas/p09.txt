@@ -1,0 +1,11 @@
+Almas oscuritas:Dark Souls
+bicho:bug
+bugaso: bugg
+casa:house
+cola:tail
+Liga de las leyendas:League of Legends
+Mochila:Backpack
+nada:null
+pato:duck
+roto:zed
+Zapato:Shoe

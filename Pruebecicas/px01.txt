@@ -1,0 +1,82 @@
+Crossword00:Crucigramo
+Dark Souls:Almas oscuritas
+Dark Souls 2: Scholar of the first sin:Almas Oscuritas 2: Miarma 
+Greetings:Holap
+hOi!:ola
+Shoe:Zapato
+Tablet:Lamentablet
+TeM:TEM
+
+Borremos tablet
+
+true
+
+VEAMOS SI SE BORRO EN ORIGEN
+Crossword00:Crucigramo
+Dark Souls:Almas oscuritas
+Dark Souls 2: Scholar of the first sin:Almas Oscuritas 2: Miarma 
+Greetings:Holap
+hOi!:ola
+Shoe:Zapato
+TeM:TEM
+VEAMOS SI SE BORRO EN BILINGUE
+Almas oscuritas:Dark Souls
+Almas Oscuritas 2: Miarma :Dark Souls 2: Scholar of the first sin
+Crucigramo:Crossword00
+Holap:Greetings
+ola:hOi!
+TEM:TeM
+Zapato:Shoe
+
+Borremos Dark Souls 2: Scholar of the first sin
+
+true
+
+VEAMOS SI SE BORRO EN ORIGEN
+Crossword00:Crucigramo
+Dark Souls:Almas oscuritas
+Greetings:Holap
+hOi!:ola
+Shoe:Zapato
+TeM:TEM
+
+VEAMOS SI SE BORRO EN BILINGUE
+Almas oscuritas:Dark Souls
+Crucigramo:Crossword00
+Holap:Greetings
+ola:hOi!
+TEM:TeM
+Zapato:Shoe
+Vamos a borrar cositas que no existen
+false
+false
+false
+false
+false
+false
+
+PRUEBECICAS DE BUSQUEDA
+Zapato
+Almas oscuritas
+hOi!
+Greetings
+null
+PRUEBECICAS DE Indice
+5
+-1
+-1
+2
+4
+3
+-1
+Pasemosle cosas raras
+-1
+-1
+-1
+-1
+-1
+-1
+
+PRUEBECICAS DE VECTORES
+hOi!
+ola
