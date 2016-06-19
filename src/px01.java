@@ -66,14 +66,19 @@ public class px01 {
 
 		System.out.println();
 		System.out.println("PRUEBECICAS DE VECTORES");
-		System.out.println(lista.getO(4).get(0));
-		System.out.println(lista.getD(4).get(1));
-		System.out.println(lista.getO(0).get(0));
-		System.out.println(lista.getD(0).get(1));
+		//vamos a pedirle unos cualquiera
+		System.out.println(lista.getO(4).toString());
+		System.out.println(lista.getD(4).toString());
+		//vamos a pedirle los primeros
+		System.out.println(lista.getO(0).toString());
+		System.out.println(lista.getD(0).toString());
+		//vamos a pedirle los ultimos :D
+		System.out.println(lista.getD(5).toString());
+		System.out.println(lista.getO(5).toString());
+		//vamos a pedirle que no estan (tendrian que ser nullsito)
+		System.out.println(lista.getO(6));
 		System.out.println(lista.getO(-1));
-		System.out.println(lista.getD(-1));
-		System.out.println(lista.getO(5000));
-		System.out.println(lista.getD(4000));
+		System.out.println(lista.getO(6000000));
 
 
 	}

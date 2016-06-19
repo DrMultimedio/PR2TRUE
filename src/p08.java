@@ -6,7 +6,7 @@
 public class p08 {
 	public static void main(String[] args) {
 	ListaBilingue lista = new ListaBilingue();
-	lista.leeDiccionario("px02.dic");
+	lista.leeDiccionario("p08.dic");
 	lista.visualizaO();	
 	
 	}

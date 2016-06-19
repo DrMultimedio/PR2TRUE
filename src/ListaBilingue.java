@@ -9,6 +9,8 @@ class NodoB {
 	private String bilingue;
 	private NodoB next;
 	private NodoB prev;
+	private int acepcionesO;
+	private int acepcionesB;
 
 	public NodoB()
 	{
@@ -16,7 +18,10 @@ class NodoB {
 		bilingue = null;
 		next = null;
 		prev = null;
+		acepcionesO = 1;
+		acepcionesB = 1;
 
+		//con acepciones controlare que una palabra no tenga mas de 2 acepciones para cada traduccion
 	}
 	public NodoB(String O, String B)
 	{
@@ -24,6 +29,8 @@ class NodoB {
 		bilingue = B;
 		next = null;
 		prev = null;
+		acepcionesO = 1;
+		acepcionesB = 1;
 
 	}
 	public void cambiaNext(NodoB n){ 
@@ -55,12 +62,23 @@ class NodoB {
 	public NodoB getPrev(){
 		return prev;
 	}
+	public void setAcepcionesO(int i){
+		acepcionesO = i;
+	}
+	public int getAcepcionesO(){
+		return acepcionesO;
+	}
+	public void setAcepcionesB(int i){
+		acepcionesB = i;
+	}
+	public int getAcepcionesB(){
+		return acepcionesB;
+	}
 }
 
 public class ListaBilingue {
 	private NodoB first;
 	private NodoB last;
-
 	public ListaBilingue(){
 		first = null;
 		last = null;
@@ -107,6 +125,49 @@ public class ListaBilingue {
 		String[] s = linea.split(separador1);
 		if(s.length==2){
 			inserta(s[0], s[1]);
+		}
+}
+	public void leeDiccionario2(String f){
+
+		//definimos las variables de instancia
+
+		FileReader fichero= null;
+		BufferedReader lectura= null;
+
+		try{ 
+			//inicializamos las variables de instancia
+
+			fichero= new FileReader(f);
+			lectura= new BufferedReader(fichero);
+			String linea = lectura.readLine();
+			int i=0;
+			while (linea!=null){
+				leerLineaDicc2(linea, i);
+				linea=lectura.readLine(); //leemos el documento lonea a lonea
+				i++;
+			}
+		}catch(IOException e){
+			System.err.println("Error con el archivo");
+			System.out.println(f);
+		}
+		//y cerramos el fichero
+		try{
+			if (fichero!=null)//comprobamos que fichero no sea null
+				fichero.close();
+			if (lectura!=null)//ni que lectura sea null
+				lectura.close();
+		}catch (IOException ex){//si esto falla lanzaremos la excepcion
+			System.out.println(ex);
+		}
+
+
+	}
+
+	private void leerLineaDicc2(String linea, int i) {
+		String separador1= "[ ]*\\*[ ]*";
+		String[] s = linea.split(separador1);
+		if(s.length==2){
+			inserta2(s[0], s[1]);
 		}
 }
 
@@ -229,6 +290,155 @@ public class ListaBilingue {
 
 		return ret;
 	}
+	public boolean inserta2(String o, String d){
+		//Aqui vamos a insertar las palabras para la aplicacion, por lo que permitiremos acepciones (solo 2)
+		boolean ret = false, no_insertable = false, repetidaO = false ,repetidaB = false, primeroO = false, primeroB = false;
+		NodoB nuevo, recorre, aux, sitioOrigen = null, sitioBilingue = null;
+
+		//compruebo que ninguna de las dos palabras sea nula
+		if (o != null && d != null && !o.isEmpty() && !d.isEmpty()){
+			nuevo = new NodoB(o, d);
+			//si es el primero, lo insertamos
+			if(first==null && last == null){
+				first = nuevo; 
+				last = nuevo;
+			}
+
+			else{
+				//primero la colocamos en orden de palabra bilingue, es decir desde first hasta last
+				//RECORREMOS LA LISTA ORIGEN
+
+				recorre = first;
+				aux = first;
+				boolean found = false;
+				while(recorre != null && found == false){
+					int pos = recorre.getOrigen().compareToIgnoreCase(o);
+					if(pos>0){
+						//el sitio donde debo colocarlo es en el next de aux, asi que lo guardo para evitar
+						//repetidos
+						sitioOrigen = aux;
+						found = true;
+						if(recorre == first)
+							primeroO = true;
+					}
+					else if(pos<0){
+						//si la palabra de recorre es menor que la que vamos a insertar, pasamos al siguiente
+						aux = recorre;
+						recorre = recorre.getNext();
+					}
+					else if(pos == 0){
+						//si la palabra de recorre es igual, salimos del bucle. Ademas, ponemos ret a false
+						found = true;
+						if(recorre.getAcepcionesO() != 1 || recorre.getBilingue().equalsIgnoreCase(d)){
+							no_insertable = true;
+						}
+						else{
+							sitioOrigen = recorre;
+							repetidaO = true;
+						}
+					}
+				}
+				if (found == false){
+					//si no lo he encontrado, lo tendre que poner en el next de aux
+					sitioOrigen = aux;
+				}
+				//RECORREMOS LA LISTA BILINGUE
+
+				recorre = last;
+				aux = last;
+				found = false;
+				while(recorre != null && found == false){
+					int pos = recorre.getBilingue().compareToIgnoreCase(d);
+					if(pos>0){
+						//el sitio donde debo colocarlo es en el prev de aux, asi que lo guardo 
+						//para evitar repetidos
+						sitioBilingue = aux;
+						found = true;
+						if(recorre == last)
+							primeroB = true;
+
+					}
+					else if(pos<0){
+						//si la palabra de recorre es menor que la que vamos a insertar, pasamos al siguiente
+						aux = recorre;
+						recorre = recorre.getPrev();
+					}
+					else if(pos == 0){
+						//si la palabra de recorre es igual, salimos del bucle. Ademas, ponemos ret a false
+						found = true;
+						if(recorre.getAcepcionesB() != 1 || recorre.getOrigen().equalsIgnoreCase(d)){
+							no_insertable = true;
+						}
+						else{
+							sitioBilingue = recorre;
+							repetidaB = true;
+						}
+					}
+				}
+				if (found == false){
+					//si no lo he encontrado, lo tendre que poner en el next de aux
+					sitioBilingue = aux;
+				}
+
+				//Y AHORA INSERTAMOS LA PALABRA EN SI
+				if((no_insertable == false)&& sitioOrigen!= null && sitioBilingue != null){
+					//si no esta repetida 
+					//PRIMERO EN ORIGEN
+					//compruebo si es la primera
+
+					if(primeroO == true){
+						//si es el primero pongo first a nuevo, y le pongo a nuevo siguiente el anterior first
+						nuevo.cambiaNext(first);
+						first = nuevo;
+
+					}
+					//si no es el primero
+					else{
+						//el anterior a nuevo apuntara a nuevo, y nuevo apuntara al siguiente de sitioOrigen
+						if(repetidaO == true){
+							nuevo.setAcepcionesO(2);
+							sitioOrigen.setAcepcionesO(2);
+							if(sitioOrigen.getNext()!=null){
+								nuevo.cambiaNext(sitioOrigen.getNext());
+								
+							}
+							else{
+								nuevo.cambiaNext(null);
+							}
+
+						}
+						else{
+						nuevo.cambiaNext(sitioOrigen.getNext());
+						}
+						sitioOrigen.cambiaNext(nuevo);
+
+					}
+					//AHORA EN BILINGUE
+					//si es el primero
+					if(primeroB == true){
+						//si es el primero pongo first a nuevo, y le pongo a nuevo siguiente el anterior first
+						nuevo.cambiaPrev(sitioBilingue);
+						last = nuevo;
+
+					}
+					else{
+						//el anterior a nuevo apuntara a nuevo, y nuevo apuntara al siguiente de sitioOrigen
+						if(repetidaB == true){
+							nuevo.setAcepcionesB(2);
+							sitioBilingue.setAcepcionesB(2);
+						}
+						nuevo.cambiaPrev(sitioBilingue.getPrev());
+						sitioBilingue.cambiaPrev(nuevo);
+					}
+					ret = true;
+				}
+
+			}
+		}
+
+		return ret;
+	}
+
 	public void visualizaO(){
 		NodoB recorre = first;
 		while (recorre!=null){ //mientras que haya algo en recorre
@@ -397,6 +607,38 @@ public class ListaBilingue {
 		return -1;
 
 	}
+	
+	public boolean consultaAcepcionesO(){
+		NodoB recorre = first;
+		boolean ret = false;
+		while (recorre!=null){ //mientras que haya algo en recorre
+			if(recorre.getAcepcionesO()==2){
+				System.out.print(recorre.getOrigen() + ":" + recorre.getBilingue()+",");
+				recorre = recorre.getNext();
+				System.out.println(recorre.getBilingue());
+				ret = true;
+			}
+			if(recorre!=null)
+				recorre = recorre.getNext();
+		}
+		return ret;
+	}
+	public boolean consultaAcepcionesD(){
+		NodoB recorre = last;
+		boolean ret = false;
+		while (recorre!=null){ //mientras que haya algo en recorre
+			if(recorre.getAcepcionesB()==2){
+				System.out.print(recorre.getBilingue() + ":" + recorre.getOrigen()+",");
+				recorre = recorre.getPrev();
+				System.out.println(recorre.getOrigen());
+				ret = true;
+			}
+			recorre = recorre.getPrev();
+		}
+		return ret;
+
+	}
+	
 	public Vector<String> getO(int i){
 		NodoB recorre = first;
 		Vector<String> vector = new Vector<String>();

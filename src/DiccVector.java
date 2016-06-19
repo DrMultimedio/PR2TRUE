@@ -54,6 +54,8 @@ public class DiccVector implements Diccionario{
 	}
 
 	private void leerLineaDicc(String texto, int linea) {
+		//este metodo va analizando el diccioanrio linea a linea, de manera que no tiene por que hacerlo todo
+		//lee diccionario
 		
 		if(linea==0){ //si es la primera linea, es donde este el numero de lenguas
 			nlenguas= Integer.parseInt(texto);
@@ -96,18 +98,24 @@ public class DiccVector implements Diccionario{
 	
 	
 	public boolean inserta(Palabra2 p) {
+		//definimos dos variables booleanas
+		//rep la usaremos para comprobar que tenemos la palabra en el diccionario
+		//ret es lo que vamos a devolver, para evitar demasiados return que harian dificil el debug de fallos
 		boolean rep=false, ret= true;
 		int actual = 0;
 		//compruebo que la palabra tenga los mismos idiomas que mi diccionario
 		for(int i=0; i<nlenguas; i++){
 			if(lenguas.get(i)!=p.getLenguas()[i]){
 				return false;
+				//si no tiene los mismos idiomas que mi diccionario salgo
 			}
 			
 		}
 		//compruebo si tengo la palabra en el diccionario
 		for (int i=0; i<dicc.size();i++)
 		{
+			//si encuentro la palabra pongo repetido a true y guardo donde esta la palabra
+			//para la siguiente seccion de codigo
 			if (p.getOrigen().equalsIgnoreCase(dicc.get(i).getOrigen()))
 			{
 				rep=true;
@@ -117,7 +125,7 @@ public class DiccVector implements Diccionario{
 		}
 		
 		if (rep == true){
-			//si la palabra esta repetida, la combino
+			//si la palabra esta repetida, la combino con el metodo combinaPalabra()
 			dicc.get(actual).combinaPalabra(p);
 			ret=false;
 		}
@@ -185,20 +193,6 @@ public class DiccVector implements Diccionario{
 					min = centro +1;
 				}
 				
-
-				/*centro=(max+min)/2;
-				if (dicc.get(centro).getOrigen().compareToIgnoreCase(s)==0){ //si me devuelve 0, las palabras son las mismas, y no tengo que buscar mos
-					return i;
-				}
-				else{
-					if(dicc.get(centro).getOrigen().compareToIgnoreCase(s)>0){//se devuelve un nomero mayor que uno, el objeto del diccionario es mayor que el que me pasan
-						max=centro-1; //y por tanto, no estaro mos arriba que en el centro.
-					}
-					else{ //si devuelve un nomero menor que uno, la palabra buscada no estaro mos abajo del centro
-						min=centro+1; // y por tanto el monimo pasaro a ser el centro
-					}
-				}
-				*/
 			}
 		}
 		return -i;
